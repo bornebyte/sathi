@@ -1,5 +1,0 @@
-# My first Sathi program!
-sathi yo ho a = 100
-sathi yo ho b = 50
-sathi yo ho result = (a + b) * 2
-sathi bhana(result)
