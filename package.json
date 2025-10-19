@@ -1,12 +1,16 @@
 {
   "name": "sathi",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A simple, interpreted programming language built with JavaScript.",
+  "main": "sathi.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node sathi.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }

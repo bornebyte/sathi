@@ -1,3 +1,7 @@
-sathi yo ho x = 10
-sathi yo ho y = 20
-sathi bhana(x + y)
+# Calculate the area of a rectangle
+sathi yo ho length = 10
+sathi yo ho width = 5.5
+
+sathi yo ho area = length * width
+
+sathi bhana(area)

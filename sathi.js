@@ -322,7 +322,9 @@ function runSathiFile(filename) {
       console.error(`Error: ${result.error}`);
       process.exit(1);
     }
-    console.log(result.output[0])
+    result.output.forEach(line => {
+      console.log(line);
+    });
   } catch (error) {
     console.error(`Failed to read file: ${error.message}`);
     process.exit(1);
@@ -339,9 +341,9 @@ if (require.main === module) {
   if (args.length === 0) {
     console.log("Sathi Programming Language v1.0");
     console.log("\nUsage:");
-    console.log("  node interpreter.js <filename.sathi>  - Run a .sathi file");
+    console.log("  node sathi.js <filename.sathi>  - Run a .sathi file");
     console.log("\nExample:");
-    console.log("  node interpreter.js program.sathi");
+    console.log("  node sathi.js program.sathi");
     process.exit(0);
   } else {
     runSathiFile(args[0]);
