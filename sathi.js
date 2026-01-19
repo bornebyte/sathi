@@ -594,7 +594,41 @@ class Parser {
         return { type: 'Assignment', name: varName, value: expr };
       }
 
-      throw new Error(`Expected BHANA or YO after SATHI at line ${this.lexer.line}`);
+      // Function definition: sathi kaam functionName(param1, param2) { ... }
+      if (this.currentToken.type === 'FUNCTION') {
+        this.eat('FUNCTION');
+        const funcName = this.currentToken.value;
+        this.eat('ID');
+        this.eat('LPAREN');
+
+        const params = [];
+        if (this.currentToken.type !== 'RPAREN') {
+          params.push(this.currentToken.value);
+          this.eat('ID');
+          while (this.currentToken.type === 'COMMA') {
+            this.eat('COMMA');
+            params.push(this.currentToken.value);
+            this.eat('ID');
+          }
+        }
+
+        this.eat('RPAREN');
+        const body = this.block();
+
+        return { type: 'FunctionDef', name: funcName, params, body };
+      }
+
+      // Return statement: sathi firta expression
+      if (this.currentToken.type === 'RETURN') {
+        this.eat('RETURN');
+        let value = null;
+        if (this.currentToken.type !== 'NEWLINE' && this.currentToken.type !== 'EOF' && this.currentToken.type !== 'RBRACE') {
+          value = this.expression();
+        }
+        return { type: 'Return', value };
+      }
+
+      throw new Error(`Expected BHANA, YO, FUNCTION, or RETURN after SATHI at line ${this.lexer.line}`);
     }
 
     // If statement: sathi yadi (condition) { ... }

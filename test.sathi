@@ -1,0 +1,34 @@
+# Quick test of key features
+sathi bhana("Testing Sathi Language")
+
+# Strings with escape sequences
+sathi yo ho text = "Line 1\nLine 2\tTabbed"
+sathi bhana(text)
+
+# Arrays
+sathi yo ho numbers = [10, 20, 30]
+sathi bhana(numbers[1])
+
+# Logical operators
+sathi yo ho result = satya ra asatya
+sathi bhana(result)
+
+sathi yo ho result2 = satya wa asatya
+sathi bhana(result2)
+
+# Modulo operator
+sathi yo ho remainder = 17 % 5
+sathi bhana(remainder)
+
+# Function with recursion
+sathi kaam sum(n) {
+  yadi (n <= 0) {
+    firta 0
+  } anya {
+    firta n + sum(n - 1)
+  }
+}
+
+sathi bhana(sum(10))
+
+sathi bhana("All tests passed!")
