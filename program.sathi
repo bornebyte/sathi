@@ -1,7 +1,121 @@
-# Calculate the area of a rectangle
-sathi yo ho length = 10
-sathi yo ho width = 5.5
+# ==================================
+# Sathi Programming Language Demo
+# Showcasing all language features
+# ==================================
 
-sathi yo ho area = length * width
+# 1. BASIC VARIABLES AND ARITHMETIC
+sathi bhana("=== Basic Variables ===")
+sathi yo ho x = 10
+sathi yo ho y = 20
+sathi yo ho sum = x + y
+sathi bhana(sum)
 
-sathi bhana(area)
+# 2. STRINGS
+sathi bhana("=== Strings ===")
+sathi yo ho namaste = "Namaste, Sathi!"
+sathi bhana(namaste)
+sathi yo ho combined = jodne("Hello ", "World", "!")
+sathi bhana(combined)
+
+# 3. BOOLEANS AND COMPARISONS
+sathi bhana("=== Booleans ===")
+sathi yo ho isGreater = x > 5
+sathi bhana(isGreater)
+sathi yo ho isEqual = x == 10
+sathi bhana(isEqual)
+
+# 4. CONDITIONALS
+sathi bhana("=== Conditionals ===")
+sathi yo ho age = 18
+yadi (age >= 18) {
+  sathi bhana("Adult")
+} anya {
+  sathi bhana("Minor")
+}
+
+# 5. WHILE LOOPS
+sathi bhana("=== While Loop ===")
+sathi yo ho counter = 0
+jaba (counter < 3) {
+  sathi bhana(counter)
+  counter = counter + 1
+}
+
+# 6. FOR LOOPS
+sathi bhana("=== For Loop ===")
+prawahit (i dekhi 1 samma 4 kadam 1) {
+  sathi bhana(i)
+}
+
+# 7. ARRAYS
+sathi bhana("=== Arrays ===")
+sathi yo ho numbers = [10, 20, 30, 40, 50]
+sathi bhana(numbers[0])
+sathi bhana(numbers[2])
+thapaune(numbers, 60)
+sathi bhana(lambai(numbers))
+
+# 8. OBJECTS
+sathi bhana("=== Objects ===")
+sathi yo ho person = {name: "Ram", age: 25, city: "Kathmandu"}
+sathi bhana(person.name)
+sathi bhana(person.age)
+person.age = 26
+sathi bhana(person.age)
+
+# 9. FUNCTIONS
+sathi bhana("=== Functions ===")
+sathi kaam add(a, b) {
+  sathi firta a + b
+}
+sathi yo ho result = add(15, 25)
+sathi bhana(result)
+
+sathi kaam greet(name) {
+  sathi yo ho message = jodne("Hello, ", name, "!")
+  sathi firta message
+}
+sathi bhana(greet("Sathi"))
+
+# 10. BUILT-IN FUNCTIONS
+sathi bhana("=== Built-in Functions ===")
+sathi bhana(thulo(10, 20, 5, 30))
+sathi bhana(sano(10, 20, 5, 30))
+sathi bhana(shakti(2, 8))
+sathi bhana(vargamul(144))
+sathi bhana(upari("hello"))
+
+# 11. TRY-CATCH ERROR HANDLING
+sathi bhana("=== Error Handling ===")
+pryas {
+  sathi yo ho badDivision = 10 / 0
+  sathi bhana("This won't print")
+} samatan (error) {
+  sathi bhana("Error caught!")
+  sathi bhana(error)
+}
+
+# 12. NESTED STRUCTURES
+sathi bhana("=== Nested Structures ===")
+sathi kaam factorial(n) {
+  yadi (n <= 1) {
+    sathi firta 1
+  } anya {
+    sathi firta n * factorial(n - 1)
+  }
+}
+sathi bhana(factorial(5))
+
+# 13. LOOP CONTROL
+sathi bhana("=== Loop Control ===")
+prawahit (i dekhi 0 samma 10 kadam 1) {
+  yadi (i == 3) {
+    jari
+  }
+  yadi (i == 7) {
+    thodau
+  }
+  sathi bhana(i)
+}
+
+sathi bhana("=== Program Complete ===")
